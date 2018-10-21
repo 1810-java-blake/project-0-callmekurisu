@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="fetch.js"></script>
+    <script src="fetchPrice.js"></script>
 
 </head>
 
 <body>
     <div>
-        <h1 id="title"><a href="https://github.com/callmekurisu/" target="_blank">
+        <h1 id="title"><a href="https://github.com/1810-java-blake/project-0-callmekurisu" target="_blank">
         <img id="git" src="https://assets-cdn.github.com/images/modules/open_graph/github-octocat.png">
-        </a>LND willCodeForFood v.01 Beta <a href="https://adwatcher.hopto.org/nodeInfo"><img id="bolt"  src="http://laoblogger.com/images/image-of-a-lightning-bolt-3.jpg"></a> <span id="btcprice">$BTC PRICE GOES HERE</span>
+        </a>LND willCodeForFood v.01 Beta <a href="/home/kurisu/Revature/project-0-callmekurisu/about.html"><img id="bolt"  src="http://laoblogger.com/images/image-of-a-lightning-bolt-3.jpg"></a> Node Info <span id="btcprice"></span>
         </h1>
     </div>
     <div id="main">
@@ -34,23 +34,27 @@
            <table id="t">
                <tr>
                    <th>Code Snippet</th>
+                   <th>Description</th>
                    <th>Snippet Price $BTC</th>
                    <th>Snippet Price $USD</th>
                 </tr>
                 <tr>
                     <td><a href="#">Code Snippet 1</a></td>
-                    <td>CS1 price btc</td>
-                    <td>CS1 price usd</td>
+                    <td>CS1 description</td>
+                    <td>100 Satoshis</td>
+                    <td id="CS1price">$</td>
                 </tr>
                 <tr>
                     <td><a href="#">Code Snippet 2</a></td>
-                    <td>CS2 price btc</td>
-                    <td>CS2 price usd</td>
+                    <td>CS2 description</td>
+                    <td>200 Satoshis</td>
+                    <td id="CS2price"></td>
                 </tr>
                 <tr>
                     <td><a href="#">Code Snippet 3</a></td>
-                    <td>CS3 price btc</td>
-                    <td>CS3 price usd</td>
+                    <td>CS3 description</td>
+                    <td>300 Satoshis</td>
+                    <td id="CS3price"></td>
                 </tr>
             </table>
 
