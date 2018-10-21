@@ -14,7 +14,10 @@ html {
 
 #main {
     background-color: aliceblue;
-    padding-bottom: 120px
+    margin-top: 20px;
+    padding-bottom: 120px;
+    margin-left: 10px;
+    font-size: 16px;
 }
   #btcprice{
       text-align: left;
@@ -77,20 +80,7 @@ html {
     font-size: 24px;
   }
   
- 
-  #skip {
-    margin-left: 10px;  
-  }
-  
-  #node {
-    margin-right: 50px;
-  }
-  
-  #support{
-    width: 100px;
-    margin-left: 10px;
-  }
-  
-  #back {
-    margin-left: 10px;
-  }
+ textarea {
+   resize: none;
+   
+ }

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lorenz solution</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="fetchPrice.js"></script>
+</head>
+<body>
+        <div>
+                <h1 id="title"><a href="/home/kurisu/Revature/project-0-callmekurisu/index.html">
+                <img id="git" src="https://assets-cdn.github.com/images/modules/open_graph/github-octocat.png">
+                </a>LND willCodeForFood v.01 Beta <a href="/about.html"><img id="bolt"  src="http://laoblogger.com/images/image-of-a-lightning-bolt-3.jpg"></a> Node Info <span id="btcprice"></span>
+                </h1>
+            </div>
+            <div id="main">
+                    <textarea rows="30" cols="90"> 
+#Nigel Christian
+#Data 630 - Data Mining
+#Assignment5- K-Means Clustering
+#Dr. Firdu Bati
+#April 15, 2018
+
+#intialize library for kmeans clustering and elbow method
+library(cluster)
+library(NbClust)
+library(factoextra)
+
+#set the working directory
+setwd("/home/kurisu/Documents/Data630/Assignment5/")
+
+#reproducible output
+set.seed(1234)
+
+#load CreditApproval file with headers in the first row 
+sensors<-read.csv(file = "sensor_readings_24.csv", header = TRUE, sep = ",")
+
+#summary stats
+summary(sensors)
+
+#dataset structure
+str(sensors)
+
+#Class variable distribution
+plot(sensors$Class)
+
+#create correlation matrix with heatmap
+cormat <- round(cor(sensors[1:24]),2)
+head(cormat)
+library(reshape2)
+melted_cormat <- melt(cormat)
+head(melted_cormat)
+library(ggplot2)
+ggplot(data = melted_cormat, aes(x=Var1, y=Var2, fill=value)) +  
+  geom_tile()
+
+#copy the dataset
+sensors2<-sensors
+#remove the class variable
+sensors2$Class<-NULL
+
+#scale the dataset
+sensors2[1:24]<-scale(sensors2[1:24])
+
+#store the model with 4 clusters
+kc<-kmeans(sensors2, 4, iter.max = 40)
+
+
+#print the model output
+print(kc)
+
+#between sum of squares
+kc$betweenss
+
+#compare the model with the classes
+table(sensors$Class, kc$cluster)
+
+#model variations
+#K-means method with k=2
+kc&lt;-kmeans(sensors2, 2, iter.max = 20)
+kc
+kc$betweenss
+#K-means method with k=3
+kc&lt;-kmeans(sensors2, 3, iter.max = 30)
+kc
+kc$betweenss
+#K-means method with k=5
+kc&lt;-kmeans(sensors2, 5, iter.max = 50)
+kc
+kc$betweenss
+
+#minimum within cluster sum of squares with 3 clusters
+
+#model refinement
+#the object is only moving clockwise therefore slight turns should be removed
+#subset for no slight turns and re-factor
+modsensors &lt;- subset(sensors, sensors$Class!="Slight-Left-Turn")
+modsensors &lt;- subset(modsensors, modsensors$Class!="Slight-Right-Turn")
+modsensors$Class&lt;-factor(modsensors$Class)
+
+#verify dataset structure
+str(modsensors)
+
+#copy the modified dataset
+modsensors2&lt;-modsensors
+
+#remove class from copied dataset
+modsensors2$Class&lt;-NULL
+
+#scale the dataset
+modsensors2[1:24]&lt;-scale(modsensors2[1:24])
+
+#K-means method with k= 2
+kc&lt;-kmeans(modsensors2, 2, iter.max = 20)
+
+#cross-tabulation
+table(modsensors$Class, kc$cluster)
+
+#dataviz
+#verify cluster selection with the elbow method, within groups sum of squares
+fviz_nbclust(modsensors2, kmeans, method = "wss") +
+  geom_vline(xintercept = 2, linetype = 2)+
+  labs(subtitle = "Elbow method")
+
+clusplot(modsensors2, kc$cluster, color=TRUE, shade=TRUE, labels=2, lines=0)
+
+#higher dimensional plot
+#dataviz
+library(rgl)
+newkc &lt;- data.frame(modsensors2, K=kc$cluster)#Include the number of cluster in the data set
+pcdf &lt;- princomp(modsensors2,cor=T,score=T)
+summary(pcdf)#Compute the validity of each component/dimension
+plot3d(pcdf$scores, col=newkc$K)#Create a 3D plot
+
+                    </textarea>
+            </div>
+    
+</body>
+</html>

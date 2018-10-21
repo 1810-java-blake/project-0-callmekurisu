@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
         
         let display = response.data[1].quotes.USD.price;
         let satoshi = display.toFixed(2)/100000000;
-        btcprice.innerHTML = `BTCUSD $${display.toFixed(2)}`;
-        cs1price.innerHTML = "$" + (satoshi*100).toFixed(4);
-        cs2price.innerHTML = "$" + (satoshi*200).toFixed(4);
-        cs3price.innerHTML = "$" + (satoshi*300).toFixed(4);
+        btcprice.innerHTML = `<strong>BTCUSD $${display.toFixed(2)}`;
+        cs1price.innerHTML = "<strong>$" + (satoshi*100).toFixed(4);
+        cs2price.innerHTML = "<strong>$" + (satoshi*200).toFixed(4);
+        cs3price.innerHTML = "<strong>$" + (satoshi*300).toFixed(4);
         console.log(dispay);
         })
         .catch(err => console.log(err))
