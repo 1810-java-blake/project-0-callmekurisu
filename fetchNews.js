@@ -11,21 +11,29 @@ document.addEventListener("DOMContentLoaded", () => {
         let q = document.getElementById("query").value;
         let apiUrl2 = "&language=en&from=2018-10-18&sortBy=publishedAt&";
         let apiKey = "apiKey=e5de842e9935484f8af9dd1e39123056";
+        console.log(q);
         
-        fetch(`${apiUrl}${q}${apiUrl2}${apiKey}`)
+            fetch(`${apiUrl}${q}${apiUrl2}${apiKey}`)
         
         //.json() method returns a Promise
         //of the response body parsed from JSON
         .then(res => res.json())
         .then(data => {
-            //return random results of news articles
-            let numArticles = Object.keys(data.articles).length;
-            let n = Math.floor(Math.random() * numArticles);
-            news.innerHTML = data.articles[n].title;
-            desc.innerHTML = "<h4><strong>Abstract</strong>:</h4>"+data.articles[n].description;
-            newsurl.innerHTML = '<strong>Source</strong>: <a href="'+data.articles[n].url + '" target="_blank">' + data.articles[n].source.name  + '</a>';
-            //number of random articles to choose from
-            console.log(`Articles fetched: ${numArticles}`);
+            //limit query text box input
+
+            if(q === "bitcoin" || q === "blockchain"){
+                //return random results of news articles
+                let numArticles = Object.keys(data.articles).length;
+                let n = Math.floor(Math.random() * numArticles);
+                news.innerHTML = data.articles[n].title;
+                desc.innerHTML = "<h4><strong>Abstract</strong>:</h4>"+data.articles[n].description;
+                newsurl.innerHTML = '<strong>Source</strong>: <a href="'+data.articles[n].url + '" target="_blank">' + data.articles[n].source.name  + '</a>';
+                //number of random articles to choose from
+                console.log(`Articles fetched: ${numArticles}`);
+            } else {
+                    console.log("Invalid entry.")
+                    alert("Query currently limited to bitcoin or blockchain only! More results coming soon!");
+            };
         })
         .catch(err => console.log(err))
     })
