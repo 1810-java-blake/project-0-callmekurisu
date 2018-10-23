@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let q = document.getElementById("query").value;
     let desc = document.getElementById("description");
     let newsurl = document.getElementById("newsurl");
-
+    
     newsBtn.addEventListener("click", event => {
         let apiUrl = "https://newsapi.org/v2/everything?q=";
         let q = document.getElementById("query").value;

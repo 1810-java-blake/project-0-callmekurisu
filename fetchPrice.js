@@ -7,9 +7,24 @@ document.addEventListener("DOMContentLoaded", () => {
     let cs2price = document.getElementById("CS2price");
     let cs3price = document.getElementById("CS3price");
 
+    let apiUrl = "https://api.coinmarketcap.com/v2/ticker/"
 
-        let apiUrl = "https://api.coinmarketcap.com/v2/ticker/"
+    //no payment functionality for now...
+    let nopay = document.getElementById("nopay");
+    let nopay2 = document.getElementById("nopay2");
+    let nopay3 = document.getElementById("nopay3");
 
+    nopay.addEventListener("click", event => {
+        alert("Payment functionality disabled. Feel free to donate below. Check back soon! (^_^)");
+    });
+
+    nopay2.addEventListener("click", event => {
+        alert("Payment functionality disabled. Feel free to donate below. Check back soon! (^_^)");
+    });
+
+    nopay3.addEventListener("click", event => {
+        alert("Payment functionality disabled. Feel free to donate below. Check back soon! (^_^)");
+    });
         fetch(`${apiUrl}`)
             //.json() method returns a Promise
             //of the response body parsed from JSON
@@ -23,8 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
         cs1price.innerHTML = "<strong>$" + (satoshi*100).toFixed(4);
         cs2price.innerHTML = "<strong>$" + (satoshi*200).toFixed(4);
         cs3price.innerHTML = "<strong>$" + (satoshi*300).toFixed(4);
-        console.log(dispay);
+        console.log(display);
         })
+        
         .catch(err => console.log(err))
         
 });

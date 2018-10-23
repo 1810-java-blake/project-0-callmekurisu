@@ -1,6 +1,16 @@
+How to use:
+
+git clone this repo
+go to the index.html
+
+*payment functionality not available locally. 
+
+
 willCodeForFood
 
-Prosposal - simple page offering code snippets in exchange for LND Bitcoin micropayments
+Prosposal - simple page offering code snippets in exchange for Lightning Network micropayments
+
+
 
 User Story 1 - Welcome Page
 
