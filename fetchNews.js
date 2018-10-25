@@ -36,10 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault();
         let form = document.getElementById("myform");
         let q = form.elements[0].value;
-        console.log(q)
         //check user entry
         if(q === "bitcoin" || q === "blockchain"){
-            console.log(`Fetching ${q}...`);
+            console.log(`Fetching ${q} news...`);
             //latency display
             news.innerHTML = '<img id ="loading" src="https://media1.tenor.com/images/db85ba00c6073b451a8f05156a66524e/tenor.gif?itemid=9856796">';
             desc.innerHTML = "";

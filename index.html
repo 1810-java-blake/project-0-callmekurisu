@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="fetchPrice.js"></script>
     
 </head>
@@ -17,7 +15,7 @@
     <div>
         <h1 id="title"><a href="https://github.com/1810-java-blake/project-0-callmekurisu" target="_blank">
         <img id="git" src="https://assets-cdn.github.com/images/modules/open_graph/github-octocat.png">
-        </a>LND gotCode v.01 Beta <a href="/home/kurisu/Revature/project-0-callmekurisu/news.html"><img id="bolt"  src="http://laoblogger.com/images/image-of-a-lightning-bolt-3.jpg"></a>News <span id="btcprice"></span>
+        </a>LND gotCode v.01 Beta <a href="/home/kurisu/Revature/project-0-callmekurisu/news.html"><img id="newsicon"  src="https://cdn.pixabay.com/photo/2012/11/08/07/26/news-65343_960_720.jpg"></a> <span id="btcprice"></span>
         </h1>
     </div>
     <div id="main">
@@ -31,46 +29,47 @@
            <br>
            <h4 id="note1"><strong>Available Code Snippets</strong>
            </h4>
-           <table id="t">
+           <table class = "table" id="t">
                <tr>
-                   <th>Code Snippet</th>
-                   <th> Description </th>
-                   <th> File Type </th>
-                   <th>Snippet Price $BTC</th>
-                   <th>Snippet Price $USD</th>
-                   <th></th>
+                   <th scope="col" class="header">Snippet</th>
+                   <th scope="col"class="header"> Description </th>
+                   <th scope="col"class="header"> File Type </th>
+                   <th scope="col" class="header">Price $SATS</th>
+                   <th scope="col" class="header">Price $USD</th>
+                   <th scope="col" class="header"></th>
                 </tr>
                 <tr>
                     <td><a href="/home/kurisu/Revature/project-0-callmekurisu/cs1.html">lorenz.m</a></td>
-                    <td id="cs1">Solution for the Lorenz System</td>
+                    <td id="cs1">Solution for Lorenz System</td>
                     <td>Matlab/Octave  </td>
-                    <td>100 Satoshis</td>
+                    <td id="cs1sats"> 100 </td>
                     <td id="CS1price">$</td>
                     <td><button id="nopay" class="btn btn-primary">Free</button></td>
                 </tr>
                 <tr>
                     <td id="cs2"><a href="/home/kurisu/Revature/project-0-callmekurisu/cs2.html">binary.js</a></td>
-                    <td>Binary to String Converter</td>
+                    <td>Binary to String</td>
                     <td>Javascript </td>
-                    <td>200 Satoshis</td>
+                    <td id="cs2sats">200 </td>
                     <td id="CS2price"></td>
                     <td><button id="nopay2" class="btn btn-primary">Free</button></td>
                 </tr>
                 <tr>
-                    <td id="cs3"><a href="/home/kurisu/Revature/project-0-callmekurisu/cs3.html">kmeans.R</a></td>                    <td>Sample K-Means Clustering Script</td>
+                    <td id="cs3"><a href="/home/kurisu/Revature/project-0-callmekurisu/cs3.html">kmeans.R</a></td>        <td> K-Means Clustering</td>
                     <td>R</td>
-                    <td>300 Satoshis</td>
+                    <td id="cs3sats">300</td>
                     <td id="CS3price"></td>
                     <td><button id="nopay3" class="btn btn-primary">Free</button></td>
                 </tr>
             </table>
 
           <br>
-
+            <p id="note2">1 BTC = 100,000,000 $SATS (satoshis)</p>
+          <br>
           <h6 id="note1">This microservice is powered by <a href="https://github.com/lightningnetwork/lnd">LND </a> testnet
             <h6 id="note1">Price data provided by <a href="https://coinmarketcap.com/api/">CoinMarketCap</a> public API
         </h4>  
     </div>
     </body>
-    <footer><img src="/home/kurisu/Revature/project-0-callmekurisu/btc.png"> Donate BTC:3QySqABJoMVT3c3L23dQ4dUxZv24gKXFPQ </footer>
+    <footer><img src="/home/kurisu/Revature/project-0-callmekurisu/btc.png"> <p>Donate BTC:3QySqABJoMVT3c3L23dQ4dUxZv24gKXFPQ</p> </footer>
 </html>

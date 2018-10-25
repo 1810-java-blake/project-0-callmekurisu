@@ -30,17 +30,10 @@ html {
     width: 100px;
   }
 
-  #bolt {
-    margin-left: 10px;
+  #newsicon {
+    margin-left: 20px;
     border-radius: 100%;
-    width: 40px;
-  }
-  
-  
-
-  .uri{
     width: 100px;
-    padding-left: 50px;
   }
   
   #video {
@@ -51,17 +44,25 @@ html {
   table, th, td{
     font-family: fantasy;
     font-size: 20px;
-    text-align: left;
+    text-align: center;
     margin-left: 10px;
-    border: 2px solid black;
-  }
+      
+  } 
 
-  
+  .header {
+    text-align: center !important;
+  }
 
   #note1 {
     margin-left: 10px;
     margin-top: 10px;
     font-size: 24px;
+  }
+
+  #note2 {
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 16px;
   }
   
  textarea {
