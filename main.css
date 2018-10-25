@@ -1,8 +1,9 @@
 html {
-    background-color: rgb(215, 250, 229);
+    background-color: white;
 }
 
 #title{
+    
     text-shadow: -1px -1px 3px #AAA,
                          1px 1px 3px #FFF;
     box-shadow: 10px 10px 5px #888888;
@@ -13,7 +14,7 @@ html {
   }
 
 #main {
-    background-color: aliceblue;
+    background-color: white;
     margin-top: 20px;
     padding-bottom: 120px;
     margin-left: 10px;
