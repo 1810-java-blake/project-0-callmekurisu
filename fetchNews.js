@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let apiUrl = "https://newsapi.org/v2/everything?q=";
     let apiUrl2 = `&language=en&from=${apiDate}&sortBy=publishedAt&`;
     let apiKey = "apiKey=e5de842e9935484f8af9dd1e39123056";
-    form.addEventListener("submit", () => {
+    form.addEventListener("submit", event => {
         //handle form default so app don't crash
         event.preventDefault();
         let form = document.getElementById("myform");
