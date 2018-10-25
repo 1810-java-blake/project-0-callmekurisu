@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(q === "bitcoin" || q === "blockchain"){
             console.log(`Fetching ${q}...`);
             //latency display
-            news.innerHTML = "<h4>Fetching News...</h4>"
+            news.innerHTML = '<img id ="loading" src="https://media1.tenor.com/images/db85ba00c6073b451a8f05156a66524e/tenor.gif?itemid=9856796">';
             desc.innerHTML = "";
             newsurl.innerHTML = "";
             
