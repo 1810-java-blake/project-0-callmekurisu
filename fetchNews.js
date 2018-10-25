@@ -16,9 +16,9 @@ let y = date.getFullYear();
 let mth = date.getMonth()+1;
 let d = date.getDate();
 //API requires two digit month
-let month = () => {mth < 10 ? `0${mth}`: `${mth}`};
+let month = () => mth < 10 ? `0${mth}`: `${mth}`;
 let m = month();
-let apiDate = `${y}-${mth}-${d}`;
+let apiDate = `${y}-${m}-${d}`;
 console.log(`Query date set to: ${apiDate}`);
 
 //console.log(`Getting results since: ${apiDate}`);
