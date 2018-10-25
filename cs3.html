@@ -20,11 +20,7 @@
             </div>
             <div id="main">
                     <textarea rows="30" cols="90"> 
-#Nigel Christian
-#Data 630 - Data Mining
-#Assignment5- K-Means Clustering
-#Dr. Firdu Bati
-#April 15, 2018
+#www.github.com/callmekurisu
 
 #intialize library for kmeans clustering and elbow method
 library(cluster)
@@ -38,7 +34,7 @@ setwd("/home/kurisu/Documents/Data630/Assignment5/")
 set.seed(1234)
 
 #load CreditApproval file with headers in the first row 
-sensors<-read.csv(file = "sensor_readings_24.csv", header = TRUE, sep = ",")
+sensors&lt;-read.csv(file = "sensor_readings_24.csv", header = TRUE, sep = ",")
 
 #summary stats
 summary(sensors)
@@ -50,25 +46,25 @@ str(sensors)
 plot(sensors$Class)
 
 #create correlation matrix with heatmap
-cormat <- round(cor(sensors[1:24]),2)
+cormat &lt;- round(cor(sensors[1:24]),2)
 head(cormat)
 library(reshape2)
-melted_cormat <- melt(cormat)
+melted_cormat &lt;- melt(cormat)
 head(melted_cormat)
 library(ggplot2)
 ggplot(data = melted_cormat, aes(x=Var1, y=Var2, fill=value)) +  
   geom_tile()
 
 #copy the dataset
-sensors2<-sensors
+sensors2&lt;-sensors
 #remove the class variable
-sensors2$Class<-NULL
+sensors2$Class&lt;-NULL
 
 #scale the dataset
-sensors2[1:24]<-scale(sensors2[1:24])
+sensors2[1:24]&lt;-scale(sensors2[1:24])
 
 #store the model with 4 clusters
-kc<-kmeans(sensors2, 4, iter.max = 40)
+kc&lt;-kmeans(sensors2, 4, iter.max = 40)
 
 
 #print the model output
