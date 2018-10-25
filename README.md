@@ -3,26 +3,22 @@ How to use:
 git clone this repo
 go to the index.html
 
-*payment functionality not available locally. 
+*payment functionality not available locally. Server in progress...
 
 
-willCodeForFood
+Got Code
 
 Prosposal - simple page offering code snippets in exchange for Lightning Network micropayments
 
-
-
-User Story 1 - Welcome Page
+User Story 1 - Home page to navigate from
 
 User Story 2 - Ability to access three different code snippets (setup paywall if time)
-
-User Story 3 - About page with information about node status, peers, LND API reference, link to ZAP connections, etc. 
-
-User Story 4 - ***Mandatory! Use AJAX fetch to display current bitcoin price in the header from coinmarketcapAPI!!!
-
-User Story 5 - Working code!!! (^_^)
+ 
+User Story 3 - fetch -> news based on query from News API 
+                        dynamic pricing via CoinMarketCap API
 
 Purpose - prototype/proof of concept of micropayments without trusted third parties
+          fetch API data static and dynamically
 
 Tools/Software Needed
 
@@ -31,21 +27,24 @@ Tools/Software Needed
 -LND neutrino node (done)
 -nodeJS (done)
 -welcome.html (done)
-
--fetch.js for btc price data
--3 pages of code snippets
--News.html
--About.html
--paywall
--ZAP lightning wallet for testing
+-fetch.js for btc price data (done)
+-3 pages of code snippets (done)
+-News.html (done)
+-ZAP lightning wallet for testing (done)
 -index.js (NodeJS)
--DNS setup
--SSL/HTTPS setup if there's time...
--error handling
+-DNS setup (done)
+-error handling (done)
 
 Possible Constraints
 - AWS payments
 - time
 
-***If for some reason there is additional time. Add the ability to receive code snippets and pay devs
+Future ToDos
+-Snippet upload
+-Snippet Validation
+-Paywalls and what not
+-SSL/HTTPS 
+
+Written by:
 Nigel Christian
+Revature, Software Engineer
