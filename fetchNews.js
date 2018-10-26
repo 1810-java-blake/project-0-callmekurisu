@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let form = document.getElementById("myform");
     let desc = document.getElementById("description");
     let newsurl = document.getElementById("newsurl");
+    let foot = document.getElementById("foot");
     //API definition
     let apiUrl = "https://newsapi.org/v2/everything?q=";
     let apiUrl2 = `&language=en&from=${apiDate}&sortBy=publishedAt&`;
@@ -43,7 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
             news.innerHTML = '<img id ="loading" src="https://media1.tenor.com/images/db85ba00c6073b451a8f05156a66524e/tenor.gif?itemid=9856796">';
             desc.innerHTML = "";
             newsurl.innerHTML = "";
-            
+            foot.innerHTML = "";
+
             //go fetch
             fetch(`${apiUrl}${q}${apiUrl2}${apiKey}`)
             //.json() method returns a Promise
@@ -63,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 news.innerHTML = data.articles[n].title;
                 desc.innerHTML = "<h4><strong>Abstract</strong>:</h4>"+data.articles[n].description;
                 newsurl.innerHTML = '<strong>Source</strong>: <a href="'+data.articles[n].url + '" target="_blank">' + data.articles[n].source.name  + '</a>';    
+                foot.innerHTML = 'News provided by <a href="https://newsapi.org/">News API</a>'
                 },3000);
                 
             
