@@ -1,18 +1,13 @@
-How to use:
-
-git clone this repo
-go to the index.html
-
-*payment functionality not available locally. Server in progress...
+App is currently running live at <a href="https://gotcode.hopto.org">Got Code?</a>
 
 
-Got Code
+<b>Got Code?</b>
 
 Prosposal - simple page offering code snippets in exchange for Lightning Network micropayments
 
 User Story 1 - Home page to navigate from
 
-User Story 2 - Ability to access three different code snippets (setup paywall if time)
+User Story 2 - Paywall demo
  
 User Story 3 - fetch -> news based on query from News API 
                         dynamic pricing via CoinMarketCap API
@@ -20,8 +15,7 @@ User Story 3 - fetch -> news based on query from News API
 Purpose - prototype/proof of concept of micropayments without trusted third parties
           fetch API data static and dynamically
 
-Tools/Software Needed
-
+<b>Tools/Software Needed</b>
 -AWS (done)
 -main.css for styling (done)
 -LND neutrino node (done)
@@ -34,16 +28,21 @@ Tools/Software Needed
 -index.js (NodeJS)
 -DNS setup (done)
 -error handling (done)
+-SSL verification
 
-Possible Constraints
+<b>Possible Constraints</b>
 - AWS payments
 - time
 
-Future ToDos
+<b>Future ToDos</b>
+-User login
+-user ratings
+-earn payments
 -Snippet upload
 -Snippet Validation
--Paywalls and what not
--SSL/HTTPS 
+-database integration
+-lnd mainnet integration
+
 
 Written by:
 Nigel Christian
