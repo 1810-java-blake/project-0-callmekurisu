@@ -1,4 +1,4 @@
-App is currently running live at <a href="https://gotcode.hopto.org">Got Code?</a>
+App is currently down for maintenance
 
 
 <b>Got Code?</b>
